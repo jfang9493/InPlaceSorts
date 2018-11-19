@@ -1,7 +1,19 @@
 public class InPlaceSorts {
     public static void insertionSort(int[] list1)
     {
-
+        int x;
+        for (int i = 0; i < list1.length - 1; i++)
+        {
+            for (int j = i; j >= 0; j--)
+            {
+                if (list1[j-1] > list1[j])
+                {
+                    x = list1[j-1];
+                    list1[j-1] = list1[j];
+                    list1[j] = x;
+                }
+            }
+        }
     }
 
     public static void selectionSort(double[] list1)
@@ -9,11 +21,11 @@ public class InPlaceSorts {
         double swapPos = 0;
         double currMin = 0;
         double x;
-        for (int i = 0; i < list1.length - 1; i++)
+        for (double i = 0; i < list1.length - 1; i++)
         {
             swapPos = i;
             currMin = list1[i];
-            for (int j = i + 1; j < list1.length - 1; j++)
+            for (double j = i + 1; j < list1.length - 1; j++)
             {
                 if (currMin > list1[j])
                 {
