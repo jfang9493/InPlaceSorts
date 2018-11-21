@@ -4,8 +4,7 @@ public class Runner {
         InPlaceSorts numbers = new InPlaceSorts();
 
         int[] intArr = numbers.randomIntArr(10);
-        double[] doubleArr = numbers.randomDoubleArr(10);
-        String[] stringArr = numbers.randomStringArr(10,3);
+
 
 
         long start = System.nanoTime();
@@ -17,7 +16,7 @@ public class Runner {
             else System.out.print(intArr[i] + ",");
         }
         System.out.println("Insertion Sort took: " + elapsed + " nanoseconds." + "\n");
-
+        double[] doubleArr = numbers.randomDoubleArr(10);
         long start1 = System.nanoTime();
         numbers.selectionSort(doubleArr);
         long elapsed1 = System.nanoTime() - start1;
@@ -27,7 +26,7 @@ public class Runner {
             else System.out.print(doubleArr[i] + ",");
         }
         System.out.println("Selection Sort took: " + elapsed1 + " nanoseconds." + "\n");
-
+        String[] stringArr = numbers.randomStringArr(10,3);
         long start2 = System.nanoTime();
         numbers.bubbleSort(stringArr);
         long elapsed2 = System.nanoTime() - start1;

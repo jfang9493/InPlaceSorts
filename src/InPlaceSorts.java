@@ -19,14 +19,14 @@ public class InPlaceSorts {
 
     public static void selectionSort(double[] list1)
     {
-        double swapPos = 0;
+        int swapPos = 0;
         double currMin = 0;
         double x;
-        for (int i = 0; i < list1.length - 1; i++)
+        for (int i = 0; i < list1.length; i++)
         {
             swapPos = i;
             currMin = list1[i];
-            for (int j = i; j < list1.length - 1; j++)
+            for (int j = i; j < list1.length; j++)
             {
                 if (currMin > list1[j])
                 {
@@ -35,8 +35,8 @@ public class InPlaceSorts {
                 }
             }
             x = list1[i];
-            list1[i] = swapPos;
-            swapPos = x;
+            list1[i] = currMin;
+            list1[swapPos] = x;
         }
     }
 
@@ -78,8 +78,8 @@ public class InPlaceSorts {
         for (int i = 0; i < arr.length; i++)
         {
             arr[i] = (Math.random()*100);
-            //if (i == arr.length-1) System.out.println(arr[i]);
-            //else System.out.print(arr[i] + ",");
+            if (i == arr.length-1) System.out.println(arr[i]);
+            else System.out.print(arr[i] + ",");
         }
         return arr;
     }
@@ -100,6 +100,7 @@ public class InPlaceSorts {
             num--;
             arr[num] = s;
         }
+
         return arr;
     }
 }
